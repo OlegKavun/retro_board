@@ -1,0 +1,9 @@
+<div class="container" cdkDropListGroup>
+  <app-list *ngFor="let list of lists"
+    [title]="list.title" 
+    [addMode]="list.addMode" 
+    (showInputEvent)="showInputForm($event)"  
+    [card]="card"
+    [cardColor]="list.color">
+  </app-list>
+</div>

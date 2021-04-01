@@ -1,0 +1,30 @@
+<div class="card__text">{{card.text}}</div>
+<div class="card__buttons">
+    <mat-icon   
+        class="card__icon"    
+        aria-label="Close_icon"
+        (click)="deleteCard(card.id)"
+    >close</mat-icon>
+    <div class="card__like like">
+        <mat-icon 
+            class="like__icon card__icon" 
+            aria-label="Like_icon"
+            (click)="pressLike(card.id)"
+        >{{card.likes.isLiked ? 'favorite' : 'favorite_border'}}</mat-icon>
+        <div class="like__count">{{card.likes.likeCount}}</div>
+    </div>
+    <div class="card__comment comment">
+        <mat-icon 
+            class="card__icon comment__icon" 
+            aria-label="Comment_icon">comment</mat-icon>
+        <div class="comment__count">{{card.comments.length}}</div>
+    </div>
+</div>
+<div class="card__comments">
+    <hr>
+    <app-list-card-comments 
+        [comments]="card.comments" 
+        [cardId]="card.id" 
+        (addCommentEvent)="addCardComment($event)"
+    ></app-list-card-comments>
+</div>

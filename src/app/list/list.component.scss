@@ -1,0 +1,39 @@
+:host {
+    width: 45%;
+}
+
+.list {
+    &__header {
+        background-color: rgba(190, 190, 190, 0.671);
+        padding-bottom: 15px;
+        border-radius: 15px;
+    }
+
+    &__title {
+        display: inline-block;
+        cursor: default;
+    }
+
+    &__add {
+        margin-left: 30px;
+        border-radius: 50%;
+        font-size: 25px;
+        background-color: #fff;
+        outline: none;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &--active {
+            background-color: #000;
+            color: #fff;
+        }
+    }
+}
+
+.cdk-drop-list-dragging .cdk-drag {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}

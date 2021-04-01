@@ -1,0 +1,12 @@
+.comment {
+    margin-top: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+
+    &::before {
+        content: '>';
+        margin-right: 20px;
+        line-height: 1.4;
+        font-weight: bold;
+    }
+}
