@@ -6,11 +6,17 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./list-card-comments.component.scss']
 })
 export class ListCardCommentsComponent {
+public value: string = ''
 @Input() comments: string[]
 @Input() cardId: number
 @Output() addCommentEvent = new EventEmitter<string>() 
 
-addComment(value: string) {
-  this.addCommentEvent.emit(value)
+onChangeInput(value:string) {
+  this.value = value
+}
+
+addComment() {
+  this.addCommentEvent.emit(this.value)
+  this.value = ''
 }
 }

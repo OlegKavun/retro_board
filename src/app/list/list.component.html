@@ -20,6 +20,7 @@
                 [ngStyle]="{'background-color': cardColor}"
                 (deleteCardEvent)="deleteCard($event)"
                 (pressLikeEvent)="onLike($event)"
+                (commentModeEvent)="toggleComments($event)"
                 cdkDrag>
             </app-list-card>
         </div>

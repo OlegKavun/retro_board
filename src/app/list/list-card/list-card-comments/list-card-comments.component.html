@@ -1,5 +1,11 @@
 <div class="comment" *ngFor="let comment of comments">{{comment}}</div>
-<form class="comment__form" (submit)="addComment(commentInput.value)">
-    <input type="text" class="comment__input" #commentInput>
+<form class="comment__form" (submit)="addComment()">
+    <input 
+        type="text" 
+        class="comment__input" 
+        #commentInput 
+        autofocus
+        [value]="value"
+        (change)="onChangeInput(commentInput.value)">
     <button class="comment__submit" type="submit">Add</button>
 </form>

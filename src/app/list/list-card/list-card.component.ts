@@ -11,6 +11,11 @@ export class ListCardComponent {
   @Input() card: ListCard
   @Output() deleteCardEvent = new EventEmitter<number>();
   @Output() pressLikeEvent = new EventEmitter<number>();
+  @Output() commentModeEvent = new EventEmitter<number>();
+
+  togleComments(id: number) {
+    this.commentModeEvent.emit(id)
+  }
 
   deleteCard(value: number) {
     this.deleteCardEvent.emit(value)

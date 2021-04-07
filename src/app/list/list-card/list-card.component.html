@@ -16,11 +16,12 @@
     <div class="card__comment comment">
         <mat-icon 
             class="card__icon comment__icon" 
-            aria-label="Comment_icon">comment</mat-icon>
+            aria-label="Comment_icon"
+            (click)="togleComments(card.id)">comment</mat-icon>
         <div class="comment__count">{{card.comments.length}}</div>
     </div>
 </div>
-<div class="card__comments">
+<div class="card__comments" *ngIf="card.isShowFullCard">
     <hr>
     <app-list-card-comments 
         [comments]="card.comments" 

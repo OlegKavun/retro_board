@@ -54,6 +54,14 @@ export class ListComponent implements OnInit{
   @Input() cardColor: string
   @Output() showInputEvent = new EventEmitter<string>()
 
+  toggleComments(cardId: number) {
+    this.cards.forEach(card => {
+      if (card.id == cardId) {
+        card.isShowFullCard = !card.isShowFullCard
+      }
+    })
+  }
+
   showInput(value: string) {
     this.showInputEvent.emit(value)
   }
